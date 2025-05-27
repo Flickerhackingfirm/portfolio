@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "Vulnerability Assessment",
     "Reverse Engineering",
     "Cybercrime Investigation",
-    "OSINT",
+    "OSINT Investigations",
     "Training and Workshops"
   ];
 
