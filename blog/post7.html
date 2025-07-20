@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
+
+  <title>Binary Patching in Cybersecurity | Pancham Narang</title>
+</head>
+
+<body oncontextmenu="return false">
+
+
+  <!-- navbar starts -->
+  <header>
+    <a href="/" class="logo"> Pancham Narang</a>
+
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/#home">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#experience">Experience</a></li>
+        <li><a class="active" href="/blog">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- navbar ends -->
+
+  <!-- scroll top btn -->
+  <button class="fas fa-angle-up" id="scroll-top" onclick="scrollToTop()"></button>
+
+  <!-- blog post section starts -->
+  <section class="blog-post">
+    <img src="/assets/images/blog5.png" alt="Binary Patching" class="post-img">
+    
+    <h1 class="post-title">Introduction to Binary Patching in Cybersecurity and Reverse Engineering</h1>
+    
+    <div class="post-meta">
+      <span class="date"><i class="fas fa-calendar"></i> June 30, 2025</span>
+      <span class="author"><i class="fas fa-user"></i> Pancham Narang</span>
+    </div>
+    
+    <div class="post-content">
+      <p>Binary patching is a powerful technique used in cybersecurity and reverse engineering that allows modification of compiled programs without access to their source code. This article explores what binary patching is, how it works, and its applications in both defensive and analytical contexts.</p>
+
+      <h2>What is Binary Patching?</h2>
+      <p>Binary patching is the act of modifying the machine code (compiled instructions) inside an executable program without needing access to its original source code. Think of it like correcting a typo in a printed book - you're making changes directly to the final product rather than editing the original manuscript.</p>
+
+      <h2>Why Is It Called "Binary" Patching?</h2>
+      <p>The term "binary" comes from working directly with the binary file (.exe, .dll, or Linux .elf), which is a compiled, low-level representation of the software that your computer can run. Instead of changing source code or debugging at runtime, you're making permanent changes to the actual bytes of the file stored on disk.</p>
+
+      <h2>Understanding Binary Patching Through a Story</h2>
+      <p>Meet Granth, a smart kid who loves robots. He has a toy robot that can walk and talk, but it only says "I don't dance." Granth wants it to dance, so he modifies the robot's memory chip to change its behavior - this is essentially what binary patching does with software!</p>
+
+      <h2>How Binary Patching Works</h2>
+      <h3>1. Understanding the Target</h3>
+      <p>Before making any changes, you must understand the behavior of the binary you want to patch. This involves:</p>
+      <ul>
+        <li>Running the binary to observe its behavior</li>
+        <li>Noting input/output relationships</li>
+        <li>Identifying specific functionality to modify</li>
+      </ul>
+
+      <h3>2. Disassembly Process</h3>
+      <p>Using tools like IDA Pro, Ghidra, or Radare2, you convert the binary into assembly instructions that you can read and analyze. This helps you locate the exact code sections that need modification.</p>
+
+      <h3>3. Making the Patch</h3>
+      <p>Once you've identified what to change, you can modify the binary using:</p>
+      <ul>
+        <li>Hex editors for direct byte modification</li>
+        <li>Disassemblers for instruction-level changes</li>
+        <li>Specialized patching tools</li>
+      </ul>
+
+      <h2>Common Applications of Binary Patching</h2>
+      <ul>
+        <li>Security research and vulnerability analysis</li>
+        <li>Malware analysis and reverse engineering</li>
+        <li>Legacy software maintenance</li>
+        <li>Software debugging and testing</li>
+      </ul>
+
+      <h2>Important Facts About Binary Patching</h2>
+      <h3>1. Reversible Engineering</h3>
+      <p>Binary patching is a form of controlled, reversible reverse engineering that requires deep understanding of how code behaves internally.</p>
+
+      <h3>2. Memory-Only Patches</h3>
+      <p>Some patches can be applied in memory without modifying the binary file, useful for malware analysis and testing.</p>
+
+      <h3>3. Self-Verifying Binaries</h3>
+      <p>Modern software often includes anti-tamper features that must be considered when patching:</p>
+      <ul>
+        <li>Integrity checks using various hash algorithms</li>
+        <li>Runtime integrity scanning</li>
+        <li>Virtualization-based obfuscation</li>
+      </ul>
+
+      <h3>4. Advanced Techniques</h3>
+      <p>Binary patching isn't limited to just changing instructions. You can also modify:</p>
+      <ul>
+        <li>Import tables</li>
+        <li>Configuration sections</li>
+        <li>Resource sections</li>
+        <li>Thread-local storage</li>
+      </ul>
+
+      <h2>Tools of the Trade</h2>
+      <p>Common tools used in binary patching include:</p>
+      <ul>
+        <li>IDA Pro and Ghidra for disassembly</li>
+        <li>HxD and other hex editors</li>
+        <li>x64dbg and OllyDbg for debugging</li>
+        <li>Radare2 for advanced analysis</li>
+      </ul>
+
+      <h2>Ethical Considerations and Disclaimer</h2>
+      <p>Binary patching is a powerful technique that should be used responsibly. It's essential to:</p>
+      <ul>
+        <li>Obtain proper authorization before modifying software</li>
+        <li>Use these skills for ethical purposes only</li>
+        <li>Respect intellectual property rights</li>
+        <li>Follow applicable laws and regulations</li>
+      </ul>
+
+      <p class="disclaimer">🚨 <strong>Disclaimer:</strong> This article is intended for educational and ethical research purposes only. Unauthorized modification of software may be illegal and unethical.</p>
+    </div>
+    
+    <div class="morebtn">
+      <a href="/blog" class="btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Blog</span>
+      </a>
+    </div>
+  </section>
+  <!-- blog post section ends -->
+
+  <!-- footer section starts -->
+  <section class="footer">
+
+    <div class="box-container">
+
+      <div class="box">
+        <h3>Pancham Narang</h3>
+        <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br /> <br /> Keep Rising
+          🚀. Connect with me over live chat!</p>
+      </div>
+
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="/#home"><i class="fas fa-chevron-circle-right"></i> home</a>
+        <a href="/#about"><i class="fas fa-chevron-circle-right"></i> about</a>
+        <a href="/#skills"><i class="fas fa-chevron-circle-right"></i> Skills</a>
+        <a href="/#services"><i class="fas fa-chevron-circle-right"></i> services</a>
+        <a href="/#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
+        <a href="/blog"><i class="fas fa-chevron-circle-right"></i> blog</a>
+        <a href="/#contact"><i class="fas fa-chevron-circle-right"></i> Contact</a>
+      </div>
+
+      <div class="box">
+        <h3>contact info</h3>
+        <p> <i class="fas fa-envelope"></i>flickerhackingfirm@gmail.com</p>
+        <p> <i class="fas fa-map-marked-alt"></i>Delhi,India</p>
+        <div class="share">
+          <a href="https://www.linkedin.com/in/panchamnarang" class="fab fa-linkedin" aria-label="LinkedIn"
+            target="_blank"></a>
+          <a href="https://github.com/PanchamNarang" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
+          <a href="mailto:flickerhackingfirm@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+          <a href="https://x.com/npancham26" class="fab fa-twitter" aria-label="Twitter" target="_blank"></a>
+          <a href="https://t.me/cyberferb" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="credit">
+      <p>Copyright &copy; 2025 by Pancham Narang | All Rights Reserved.</p>
+    </div>
+
+  </section>
+  <!-- footer section ends -->
+
+  <!-- scroll top btn -->
+  <a href="#" class="fas fa-angle-up" id="scroll-top"></a>
+  <!-- scroll back to top -->
+
+
+  <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
+  <!-- jquery cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- scroll reveal anim -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
