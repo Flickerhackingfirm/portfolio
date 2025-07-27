@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /assets/js/
+
+# Allow all search engines to access the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemap location
+Sitemap: https://flickerhackingfirm.com/sitemap.xml
